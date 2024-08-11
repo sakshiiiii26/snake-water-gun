@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Snake Water and Gun</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="snake water gun.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrinl-to-fit=no">
+    </head>
+    <body>
+      <div class="container-fluid">
+         
+        <div class="box shadow-lg">
+             <div class="text-center">
+                <h2><span style="background-color: rgb(0, 0, 0);">SNAKE, WATER AND GUN</span></h2>
+             </div>
+             
+             <div class="game">
+                 <btn class="btn btn-warning"  id="snake" onclick="play('snake')">snake</btn>
+                 <btn class="btn btn-warning"  id="water" onclick="play('water')">water</btn>
+                 <btn class="btn btn-warning"  id="gun"   onclick="play('gun')">gun</btn>  
+              </div>
+             
+             <div class="result">
+               <h3 class="text-center ">Result</p>
+               <h3 class="text-center" id="result"><!--yow won/loss --></h3>
+             </div>
+
+             <div class="score">
+               <h3 class="text-center"><span style="background-color: rgb(97, 94, 7);"> ..score.. </span>
+               </h3>
+               <div class="row">
+                 <h4 class="col-6 text-center" style="color: #f7ba60;" id="win">win</h4>
+                 <h4 class="col-6 text-center" style="color: #f7ba60;" id="loss">loss</h4>
+                 <p class="col-6 text-center"> <span id="playerWins">0</span></p>
+                 <p class="col-6 text-center"> <span id="computerWins">0</span></p>              
+               </div>  
+             </div>
+        </div>
+           
+      </div>
+    </body>
+    <script>
+      let playerWins= 0;
+      let computerWins= 0;
+      function play(userChoice)
+       {
+            const choices = ['snake', 'water', 'gun'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            let result;
+            if (userChoice === computerChoice)
+            {
+                result = "It's a tie!";
+            } 
+            else if (
+                (userChoice === 'snake' && computerChoice === 'water') ||
+                (userChoice === 'water' && computerChoice === 'gun') ||
+                (userChoice === 'gun' && computerChoice === 'snake')) 
+            {
+                result = `You win! Computer chose ${computerChoice}.`;
+                playerWins++;
+            }
+            else{
+                result = `You lose! Computer chose ${computerChoice}.`;
+                computerWins++;
+                }
+
+            document.getElementById('result').textContent = result;
+            document.getElementById('playerWins').textContent = playerWins;
+            document.getElementById('computerWins').textContent = computerWins;
+
+        }
+    </script>
+</html>

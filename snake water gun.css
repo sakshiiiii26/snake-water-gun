@@ -1,0 +1,51 @@
+.container-fluid{
+    background-image: url(https://c.wallhere.com/photos/a9/24/1920x1080_px_animals_gun_snake-729221.jpg!d);
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.box{
+    color: aliceblue;
+    background-color: rgba(3, 86, 41, 0.5);
+    border: 2px solid rgb(81, 80, 81);
+    height:500px;
+    width:400px;
+    border-radius: 5%;
+    position:fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   /* Center both horizontally and vertically */
+}
+.game{
+    height: 30%;
+    width:100%;
+}
+#snake{
+   
+    position: fixed; /* or absolute */
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+}
+#water{
+    position: fixed; /* or absolute */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+}
+#gun{
+    position: fixed; /* or absolute */
+    top: 30%;
+    left: 80%;
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+}
+.result{
+    height: 30%;
+    width: 100%;
+    color: #fbb44a;
+}
